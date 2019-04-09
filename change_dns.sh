@@ -47,7 +47,7 @@ else
     -H "X-Auth-Email: $EMAIL" \
     -H "X-Auth-Key: $KEY" \
     -H "Content-Type: application/json" \
-    "https://api.cloudflare.com/client/v4/zones?name=boomtech.me" | jq -r  --arg domain "$DOMAIN_NAME" '.result | .[] | select(.name == $domain)'.id)
+    "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN_NAME" | jq -r  --arg domain "$DOMAIN_NAME" '.result | .[] | select(.name == $domain)'.id)
 
     if [ -z "$ZONE_ID" ] || [ "$ZONE_ID" = "null" ]; then
     echo "error: retrieving ZONE_ID, got '$ZONE_ID'"
