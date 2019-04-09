@@ -8,4 +8,4 @@ sudo apt install curl
 
 This is an example to run script
 
-./failover_cloudflare.sh  -e CloudflareEmail -k CloudflareApiKey -n DomainHosted -p newDNS -c IpToCheck
+./change_dns.sh  -e CloudflareEmail -k CloudflareApiKey -n DomainHosted -p newDNS -c IpToCheck
